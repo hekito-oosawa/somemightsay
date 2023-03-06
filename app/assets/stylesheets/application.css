@@ -125,3 +125,9 @@ p.item-title {
   background-color: #888888;
   margin-bottom: 20px;
 }
+
+.btn {
+  background-color: #888888;
+  color: white;
+  margin-bottom: 5px;
+}

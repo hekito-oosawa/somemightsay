@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def counts(user)
-    @count_somemightsays = user.somemightsays.count
+    @count_says = user.says.count
   end
 
 end

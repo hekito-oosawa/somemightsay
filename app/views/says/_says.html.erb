@@ -1,0 +1,26 @@
+<ul class="media-list">
+  <% says.each do |say| %>
+  <li class="media">
+    <div class="media-left">
+      <img class="media-object img-rounded" src="<%= gravatar_url(say.user, { size: 50 }) %>" alt="">
+    </div>
+    <div class="media-body">
+      <div>
+        <%= link_to say.user.name, user_path(say.user) %> <span class="text-muted">posted at </span>
+      </div>
+      <div>
+        <p><%= say.content %></p>
+      </div>
+      <span class="text-muted">
+        <%= say.created_at.getlocal("+09:00") %>
+      </span>
+      <div>
+        <% if current_user == say.user %>
+         <%= link_to "Delete", say, method: :delete, data: { confirm: "You sure?" }, class: 'btn' %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+  <%= paginate @says %>
+</ul>

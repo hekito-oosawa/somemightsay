@@ -28,7 +28,8 @@
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
 
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'Sign up', class: 'btn btn-block' %>
     <% end %>
+    <p>Do you have an account already? <%= link_to 'Log in', login_path %></p>
   </div>
 </div>

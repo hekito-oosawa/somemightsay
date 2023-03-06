@@ -1,15 +1,16 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-<%#      <%= form_for(@somemightsay) do |f| %>
-<%#        <div class="form-group">
+      <%= form_for(@say) do |f| %>
+        <div class="form-group">
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
-<%#        </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-<%#      <% end %>
+        </div>
+        <%= f.submit 'Post', class: 'btn btn-block' %>
+      <% end %>
     </aside>
     <div class="col-xs-8">
-<%#      <%= render 'somemightsays/somemightsays', somemightsays: @somemightsays %>
+      test
+      <%= render 'says/says', says: @says %>
     </div>
   </div>
 <% else %>
@@ -18,7 +19,13 @@
       <%#<h1>Some Might Say</h1>%>
     </div>
   </div>
-  <div align="center" class="signupbutton">
-    <%= link_to 'Sign up?', signup_path, class: 'btn btn-lg btn-primary' %>
+  <div align="center">
+    <span>
+      <%= link_to 'Log in?', login_path, class: 'btn' %>
+    </span>
+     or 
+    <span>
+      <%= link_to 'Sign up?', signup_path, class: 'btn' %>
+    </span>
   </div>
 <% end %>
